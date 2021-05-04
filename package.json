@@ -17,7 +17,9 @@
     "startbootstrap-clean-blog": "^5.1.0"
   },
   "devDependencies": {
+    "browser-sync": "^2.26.14",
     "gulp": "^4.0.2",
-    "gulp-sass": "file:../gulp-sass-master"
+    "gulp-dart-sass": "^1.0.2",
+    "sass": "^1.32.12"
   }
 }

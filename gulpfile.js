@@ -1,12 +1,15 @@
-const gulp = require('gulp');
-const sass = require('gulp-sass');
+const { src, dest, series, watch } = require('gulp');
+const sass = require('gulp-dart-sass');
 
-gulp.task('hello', async () => {
-    console.log('Hello world!');
-});
-
-gulp.task('sass', async () => {
-    return gulp.src('source-files')
+function css() {
+    return src('public/src/scss/styles.scss')
     .pipe(sass())
-    .pipe
-})
+    .pipe(dest('public/dist/css'))
+}
+
+function watcher() {
+    watch('public/src/scss/styles.scss', series(css));
+}
+
+exports.css = css;
+exports.watcher = watcher;
